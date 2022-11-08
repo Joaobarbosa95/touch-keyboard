@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; 
+}
+
+/* Single key */
+.key {
+    background: #fff;
+    float: left;
+    border: 1px solid #f9f9f9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  color: #000;
+  font-size: 25px;
+  border-radius: 15%;
+  border: 2px solid #FFF;
+ }
+
+/*Blink if clicked */
+.key:active{
+    background-color: #b7b7b7;
+    border-color: #000000;
+    animation: 1s blink ease-in-out;
+}
+
+#keys-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+#numberic-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Row positioning alphabetic*/
+#keys-layout .keyboard-row:nth-child(2) {
+    margin-left: 30px;
+}
+
+#keys-layout .keyboard-row:nth-child(3) {
+    margin-left: 3%;
+}
+
+/* Special Keys */
+/* Alphabetic */
+#keys-layout .keyboard-row #space {
+    width: 48%;
+    border-radius: 5%;
+}
+
+#keys-layout .keyboard-row #shift {
+    width: 57px;
+    border-radius: 5%;
+}
+
+
+#keys-layout .keyboard-row #shift div {
+    /* absolute position and fixed width, height to completly overlap the parent element*/
+    position: absolute;
+    width: 106px;
+    height: 78px;
+    background: url(./caps-black.svg), transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+}
+
+#keys-layout .keyboard-row #backspace {
+    width: 69px;
+    border-radius: 5%;
+}
+
+#keys-layout .keyboard-row #backspace div {
+    /* absolute position and fixed width, height to completly overlap the parent element*/
+    position: absolute;
+    width: 108px;
+    height: 78px;
+	background: url(./delete-black.svg), transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+}
+
+
+#keys-layout .keyboard-row #numeric {
+    width: 75px;
+    border-radius: 5%;
+}
+
+#keys-layout .keyboard-row #\.com{
+    width: 76px;
+    border-radius: 5%;
+}
+
+/* Numeric */
+#numeric-layout .keyboard-row #abc {
+    width: 110px;
+    border-radius: 5%;
+}
+
+#numeric-layout .keyboard-row #backspace {
+    width: 112px;
+    border-radius: 5%;
+}
+
+#numeric-layout .keyboard-row #backspace div {
+    /* absolute position and fixed width, height to completly overlap the parent element*/
+    position: absolute;
+    width: 114px;
+    height: 78px;
+	background: url(./delete-black.svg), transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+}
+
+#numeric-layout .keyboard-row #space {
+    width: 62.5%;
+    border-radius: 5%;
+}
+
+/* 
+ * special letters
+*/
+div#accent-keyboard div.accent-keyboard-modifications {
+    position: absolute;
+    border-radius: 5px;
+    /*display: none;*/
+    padding: 8px
+}
+
+/*Keyboard position */
+div#accent-keyboard {
+  top: 110px;
+  position: relative;
+  background: transparent;
+}
+
+div#accent-keyboard div .accent-keyboard-backspace {
+  width: 110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+  border-radius: 5%;
+}
+
+div#accent-keyboard div #accent-keyboard-space {
+  margin-left: 5px;
+  width: 400px;
+  clear: none;
+}
+
+div#accent-keyboard div #accent-keyboard-left-shift {
+  margin-left: 2%;
+}
+
+div#accent-keyboard div.accent-keyboard-modifications {
+  height: 82px;
+  top: -62px !important;
+  width: max-content !important;
+  padding: 5px;
+  left: -5px !important;
+}
+.display-none {
+/*  display: none !important;*/
+}
+
+/*special characters start*/
+div#accent-keyboard div div:nth-child(n + 34) {
+  display: none; /*Number*/
+}
+div#accent-keyboard div div:nth-child(58),
+div#accent-keyboard div div:nth-child(60) {
+  width: 110px;
+}
+div#accent-keyboard div div:nth-child(59) {
+  width: 400px;
+}
+
+/*special characters end*/
+/*disable active buttons effect*/
+div#accent-keyboard div div.active {
+}
+
+.numbers {
+  max-width: 672px !important;
+}
+
+#keyboard-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+  }
+  100% {
+    background-color: #000;
+    border-color: #fff;
+    color: #fff;
+  }
+}
